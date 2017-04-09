@@ -1,0 +1,40 @@
+<style>
+
+  body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: pink;
+    color: blue;
+  }
+ 
+  .prediction {
+    color: blue;
+    border: 20px solid lightblue;
+  } 
+  .box {
+    font: 10px sans-serif;
+  }
+  .box line,
+  .box rect,
+  .box circle {
+    fill: #fff;
+    stroke: #000;
+    stroke-width: 1.5px;
+  }
+  .box .center {
+    stroke-dasharray: 3,3;
+  }
+  .box .outlier {
+    fill: none;
+    stroke: #ccc;
+  }
+  
+  
+  #mynetwork {
+       width: "100%";
+       height: 800px;
+       border: 1px solid lightgray;
+       background-color: "white";
+     }
+
+
+</style>

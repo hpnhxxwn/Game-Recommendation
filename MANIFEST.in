@@ -1,0 +1,3 @@
+graft flaskapp/templates
+graft flaskapp/static
+include flaskapp/schema.sql

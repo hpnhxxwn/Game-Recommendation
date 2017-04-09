@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="../static/css/style.css">
+<html>
+  <head>
+    <title>Game Recommendations</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <!--
+    <style>
+      html, body {
+        height: 100%;
+        margin: 5;
+        padding: 5;
+      }
+      #map {
+        height: 100%;
+      }
+      #get_recommendation_button {
+        height:18px; width:150px;
+      }
+      #keywords_input {
+        height:18px; width:150px;
+      }
+    </style>
+    -->
+  </head>
+
+
+  <body>
+    
+    <div id="game-recommender">
+      <!--
+      [Game Recommendations] 
+      Choose user id:
+      <input type="text" id="user_id_input" value="2">
+
+      Enter game id:
+      <input type="text" id="game_id_input" value="1">
+      -->
+      <button id="get_recommendation_button" onclick="print_recommendation()">Get Recommendation!</button>
+    </div>
+    
+
+    <div id="map" style="width: 100%; height: 90%;float:left"></div>
+    <!-- <div id="recommended_businesses" style="width: 25%; height: 90%;float:left"></div> -->
+
+    <script src="{{ url_for('static', filename='recommend.html') }}">
+      // function getRecommendation() {
+      //   var keywords = document.getElementById('keywords_input').value;
+      //   var city_name = document.getElementById('city_name_selector').value;
+      //   if(keywords == null) {
+      //     keywords = "food";
+      //   }
+      //   var url = 'http://0.0.0.0:5000/user_id/10081786/city/' + city_name + '/top/30/keywords/' + keywords;
+      //   window.location.href = url;
+      // }
+      user_id = {{user_id}};
+      // predictions = {{predictions}}
+      //game_id = {{game_id}};
+      game_title = {{game_title}};
+      // review_count_list = {{review_count_list}};
+      // console.log(review_count_list)
+      //categories_list = {{categories_list}};
+      pred = {{ predictions }}
+      function print_recommendation() {
+        var x=""
+        //pred = {{ predictions }}
+        for (var i = 0; i < pred.length; i++) {
+          x = x + pred[i] + "\n"
+        }
+        document.getElementById("game-recommender").innerHTML = x;
+      }
+      
+    </script>
+  </body>
+</html>
+
